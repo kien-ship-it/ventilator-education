@@ -1,9 +1,6 @@
 -- GAMER-ICU Initial Database Schema
 -- Migration: 001_initial_schema
 
--- Enable UUID extension
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-
 -- ============================================
 -- 1. Users table (extends Supabase auth.users)
 -- ============================================
@@ -22,7 +19,7 @@ CREATE TABLE public.users (
 -- 2. Islands table
 -- ============================================
 CREATE TABLE public.islands (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   name TEXT NOT NULL,
   slug TEXT NOT NULL UNIQUE,
   description TEXT,
@@ -37,7 +34,7 @@ CREATE TABLE public.islands (
 -- 3. Activities table
 -- ============================================
 CREATE TABLE public.activities (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   island_id UUID NOT NULL REFERENCES public.islands(id) ON DELETE CASCADE,
   type TEXT NOT NULL CHECK (type IN ('video', 'reading', 'quiz', 'case_vignette', 'quest', 'vent_lab')),
   title TEXT NOT NULL,
@@ -53,7 +50,7 @@ CREATE TABLE public.activities (
 -- 4. User Progress table
 -- ============================================
 CREATE TABLE public.user_progress (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id UUID NOT NULL REFERENCES public.users(id) ON DELETE CASCADE,
   activity_id UUID NOT NULL REFERENCES public.activities(id) ON DELETE CASCADE,
   completed BOOLEAN NOT NULL DEFAULT FALSE,
@@ -67,7 +64,7 @@ CREATE TABLE public.user_progress (
 -- 5. User Streaks table
 -- ============================================
 CREATE TABLE public.user_streaks (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id UUID NOT NULL REFERENCES public.users(id) ON DELETE CASCADE UNIQUE,
   current_streak INT NOT NULL DEFAULT 0,
   longest_streak INT NOT NULL DEFAULT 0,
@@ -79,7 +76,7 @@ CREATE TABLE public.user_streaks (
 -- 6. Quiz Attempts table
 -- ============================================
 CREATE TABLE public.quiz_attempts (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id UUID NOT NULL REFERENCES public.users(id) ON DELETE CASCADE,
   activity_id UUID NOT NULL REFERENCES public.activities(id) ON DELETE CASCADE,
   score INT NOT NULL DEFAULT 0,
@@ -92,7 +89,7 @@ CREATE TABLE public.quiz_attempts (
 -- 7. User Daily Activity table
 -- ============================================
 CREATE TABLE public.user_daily_activity (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id UUID NOT NULL REFERENCES public.users(id) ON DELETE CASCADE,
   activity_date DATE NOT NULL DEFAULT CURRENT_DATE,
   activities_completed INT NOT NULL DEFAULT 0,
@@ -105,7 +102,7 @@ CREATE TABLE public.user_daily_activity (
 -- 8. Push Subscriptions table
 -- ============================================
 CREATE TABLE public.push_subscriptions (
-  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id UUID NOT NULL REFERENCES public.users(id) ON DELETE CASCADE UNIQUE,
   subscription JSONB NOT NULL,
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()

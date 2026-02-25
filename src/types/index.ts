@@ -1,0 +1,6 @@
+export type { User, Session } from '@/modules/auth/types'
+export type { Activity, ActivityType } from '@/modules/content/types'
+export type { IslandStatus, IslandProgress } from '@/modules/progression/types'
+export type { PointsResult, StreakInfo } from '@/modules/gamification/types'
+export type { QuizQuestion, RandomizedQuiz, QuizResult } from '@/modules/quiz/types'
+export type { AggregateMetrics, UserMetrics } from '@/modules/analytics/types'

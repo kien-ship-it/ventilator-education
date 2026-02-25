@@ -44,12 +44,12 @@ graph TB
 graph LR
     subgraph "Next.js App"
         subgraph "API Layer (Route Handlers)"
-            A1[/api/auth/*]
-            A2[/api/content/*]
-            A3[/api/gamification/*]
-            A4[/api/progression/*]
-            A5[/api/quiz/*]
-            A6[/api/analytics/*]
+            A1["API: /api/auth/*"]
+            A2["API: /api/content/*"]
+            A3["API: /api/gamification/*"]
+            A4["API: /api/progression/*"]
+            A5["API: /api/quiz/*"]
+            A6["API: /api/analytics/*"]
         end
 
         subgraph "Module Layer"

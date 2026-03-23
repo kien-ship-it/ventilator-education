@@ -13,3 +13,11 @@ export interface IslandProgress {
     completionPercentage: number
     finalExamUnlocked: boolean
 }
+
+export interface ProgressionService {
+    getUnlockedIslands(userId: string): Promise<IslandStatus[]>
+    getIslandProgress(userId: string, islandId: string): Promise<IslandProgress>
+    isFinalExamUnlocked(userId: string, islandId: string): Promise<boolean>
+    canAccessContent(userId: string): Promise<boolean>
+    markActivityComplete(userId: string, activityId: string): Promise<void>
+}

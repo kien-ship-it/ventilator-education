@@ -99,7 +99,7 @@ Tasks are sequenced so both developers can work simultaneously with minimal bloc
   - Ensure all tests pass, ask the user if questions arise.
 
 - [ ] 4. Week 3 — Dashboard, Planet Map & Progression Engine
-  - [-] 4.1 [Kien] Implement Progression Module backend service
+  - [x] 4.1 [Kien] Implement Progression Module backend service
     - Create `src/modules/progression/types.ts` with IslandStatus, IslandProgress interfaces
     - Create `src/modules/progression/service.ts` with getUnlockedIslands (calculates based on enrollment_date), getIslandProgress, isFinalExamUnlocked, canAccessContent (binge prevention), markActivityComplete
     - Create `src/app/api/progression/` route handlers

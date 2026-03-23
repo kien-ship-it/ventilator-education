@@ -55,7 +55,7 @@ Tasks are sequenced so both developers can work simultaneously with minimal bloc
     - _Requirements: 9.5_
 
 - [ ] 2. Week 2 — Authentication & Onboarding
-  - [ ] 2.1 [Kien] Implement Auth Module backend service
+  - [x] 2.1 [Kien] Implement Auth Module backend service
     - Create `src/modules/auth/types.ts` with User, Session interfaces
     - Create `src/modules/auth/service.ts` with register, login, logout, getCurrentUser, updateAvatar, completeOnboarding functions using Supabase Auth
     - Create `src/app/api/auth/` route handlers for register, login, logout
@@ -88,7 +88,7 @@ Tasks are sequenced so both developers can work simultaneously with minimal bloc
     - Wire to auth service `updateAvatar` and `completeOnboarding` endpoints
     - _Requirements: 1.6_
 
-  - [ ] 2.7 [Kien] Implement auth middleware for route protection
+  - [x] 2.7 [Kien] Implement auth middleware for route protection
     - Configure `src/lib/supabase/middleware.ts` to check auth on `(main)` route group
     - Redirect unauthenticated users to login
     - Redirect authenticated users who haven't completed onboarding to onboarding page
@@ -99,7 +99,7 @@ Tasks are sequenced so both developers can work simultaneously with minimal bloc
   - Ensure all tests pass, ask the user if questions arise.
 
 - [ ] 4. Week 3 — Dashboard, Planet Map & Progression Engine
-  - [ ] 4.1 [Kien] Implement Progression Module backend service
+  - [-] 4.1 [Kien] Implement Progression Module backend service
     - Create `src/modules/progression/types.ts` with IslandStatus, IslandProgress interfaces
     - Create `src/modules/progression/service.ts` with getUnlockedIslands (calculates based on enrollment_date), getIslandProgress, isFinalExamUnlocked, canAccessContent (binge prevention), markActivityComplete
     - Create `src/app/api/progression/` route handlers

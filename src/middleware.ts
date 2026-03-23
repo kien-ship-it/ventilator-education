@@ -8,13 +8,24 @@ export async function middleware(request: NextRequest) {
 export const config = {
     matcher: [
         /*
-         * Match all request paths except:
-         * - _next/static (static files)
-         * - _next/image (image optimization files)
-         * - favicon.ico (favicon file)
-         * - public folder assets
-         * - api routes (handled separately)
+         * Run middleware on:
+         * - (main) group: /dashboard, /island/*, /activity/*, /researcher
+         * - (auth) group: /login, /register, /onboarding
+         *
+         * Skip:
+         * - _next/static, _next/image (Next.js internals)
+         * - favicon.ico
+         * - public assets (svg, png, jpg, etc.)
+         * - /api/* routes (handled by route handlers)
          */
-        '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$|api).*)',
+        '/dashboard',
+        '/dashboard/:path*',
+        '/island/:path*',
+        '/activity/:path*',
+        '/researcher',
+        '/researcher/:path*',
+        '/login',
+        '/register',
+        '/onboarding',
     ],
 }

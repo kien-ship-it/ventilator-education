@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Island activity — lo-fi wireframes</title>
+    <script
+      src="https://mcp.figma.com/mcp/html-to-design/capture.js"
+      async
+    ></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 24px;
+        font-family: system-ui, sans-serif;
+        background: #f0f0f0;
+        color: #222;
+      }
+      h1 {
+        font-size: 14px;
+        font-weight: 600;
+        margin: 0 0 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: #555;
+      }
+      .frames {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        max-width: 360px;
+      }
+      .frame {
+        background: #fff;
+        border: 2px dashed #999;
+        border-radius: 8px;
+        padding: 16px;
+        min-height: 200px;
+      }
+      .frame-label {
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #666;
+        margin-bottom: 12px;
+        letter-spacing: 0.03em;
+      }
+      /* Frame 1: points */
+      .points-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .counter {
+        font-size: 28px;
+        font-weight: 800;
+        border: 2px solid #333;
+        padding: 8px 16px;
+        border-radius: 4px;
+        min-width: 100px;
+        text-align: center;
+      }
+      .sparkles {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+      }
+      .sparkle {
+        width: 12px;
+        height: 12px;
+        border: 2px solid #333;
+        transform: rotate(45deg);
+        background: #eee;
+      }
+      .annotation {
+        margin-top: 12px;
+        font-size: 11px;
+        color: #777;
+        line-height: 1.4;
+      }
+      /* Frame 2: streak badges */
+      .badges {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .badge {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 2px solid #333;
+        padding: 10px 12px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .badge.broken {
+        border-style: dashed;
+        opacity: 0.65;
+      }
+      .badge-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        border: 2px solid #333;
+        flex-shrink: 0;
+      }
+      /* Frame 3: celebration */
+      .overlay {
+        border: 3px solid #333;
+        border-radius: 8px;
+        padding: 20px;
+        text-align: center;
+        background: #fafafa;
+      }
+      .overlay h2 {
+        margin: 0 0 8px;
+        font-size: 18px;
+        border-bottom: 2px solid #333;
+        display: inline-block;
+        padding-bottom: 4px;
+      }
+      .overlay p {
+        margin: 0;
+        font-size: 12px;
+        color: #555;
+      }
+      .confetti {
+        display: flex;
+        justify-content: center;
+        gap: 4px;
+        margin-top: 12px;
+      }
+      .confetti span {
+        width: 8px;
+        height: 16px;
+        border: 1px solid #333;
+        background: #ddd;
+      }
+      /* Frame 4: binge */
+      .message-box {
+        border: 2px solid #333;
+        padding: 16px;
+        border-radius: 6px;
+        text-align: center;
+      }
+      .message-box strong {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+      .message-box span {
+        font-size: 12px;
+        color: #444;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Island activity (wireframes)</h1>
+    <div class="frames">
+      <!-- Frame 1 -->
+      <section class="frame" aria-labelledby="f1">
+        <div class="frame-label" id="f1">Frame 1 — Points award</div>
+        <div class="points-row">
+          <div class="counter" aria-hidden="true">+120</div>
+          <div class="sparkles" aria-label="Sparkle effect placeholder">
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+          </div>
+        </div>
+        <p class="annotation">
+          Animation: counter increments; sparkles pulse / scatter (lo-fi:
+          diamond shapes).
+        </p>
+      </section>
+
+      <!-- Frame 2 -->
+      <section class="frame" aria-labelledby="f2">
+        <div class="frame-label" id="f2">Frame 2 — Streak badge states</div>
+        <div class="badges">
+          <div class="badge">
+            <div class="badge-icon"></div>
+            <span>1-day streak</span>
+          </div>
+          <div class="badge">
+            <div class="badge-icon"></div>
+            <span>7-day · bonus milestone</span>
+          </div>
+          <div class="badge broken">
+            <div class="badge-icon"></div>
+            <span>Streak broken</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Frame 3 -->
+      <section class="frame" aria-labelledby="f3">
+        <div class="frame-label" id="f3">Frame 3 — Streak celebration (7-day)</div>
+        <div class="overlay">
+          <h2>7 days!</h2>
+          <p>Milestone popup · short copy · CTA (wireframe)</p>
+          <div class="confetti" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+        <p class="annotation">
+          Animation: popup scale-in; confetti / particles (blocks = placeholder).
+        </p>
+      </section>
+
+      <!-- Frame 4 -->
+      <section class="frame" aria-labelledby="f4">
+        <div class="frame-label" id="f4">Frame 4 — Binge prevention</div>
+        <div class="message-box">
+          <strong>Daily limit reached</strong>
+          <span
+            >You've reached today's limit, come back tomorrow.</span
+          >
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

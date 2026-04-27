@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Island activity — wireframes</title>
+    <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 24px;
+        font-family: system-ui, sans-serif;
+        background: #e8e8e8;
+        color: #222;
+      }
+      h1 {
+        font-size: 14px;
+        font-weight: 600;
+        margin: 0 0 20px;
+        color: #555;
+      }
+      .frame {
+        width: 375px;
+        min-height: 200px;
+        margin-bottom: 32px;
+        background: #fff;
+        border: 2px dashed #999;
+        padding: 16px;
+        position: relative;
+      }
+      .frame-label {
+        position: absolute;
+        top: -22px;
+        left: 0;
+        font-size: 11px;
+        font-weight: 600;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .muted {
+        font-size: 12px;
+        color: #777;
+        margin: 8px 0 0;
+      }
+      /* Frame 1: Install banner */
+      .install-banner {
+        border: 1px solid #bbb;
+        padding: 12px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        background: #f5f5f5;
+      }
+      .install-icon {
+        width: 40px;
+        height: 40px;
+        background: #ccc;
+        flex-shrink: 0;
+      }
+      .install-copy {
+        flex: 1;
+        font-size: 13px;
+        line-height: 1.4;
+      }
+      .install-actions {
+        display: flex;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .btn {
+        padding: 8px 14px;
+        font-size: 12px;
+        border: 1px solid #888;
+        background: #ddd;
+      }
+      .btn-primary {
+        background: #333;
+        color: #fff;
+        border-color: #333;
+      }
+      .screen-placeholder {
+        margin-top: 16px;
+        height: 120px;
+        border: 1px dashed #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        color: #aaa;
+      }
+      /* Frame 2 & 3: Push cards */
+      .push-shell {
+        border: 1px solid #bbb;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fafafa;
+      }
+      .push-header {
+        height: 8px;
+        background: #ddd;
+      }
+      .push-body {
+        padding: 14px;
+      }
+      .push-app {
+        font-size: 11px;
+        color: #888;
+        margin-bottom: 6px;
+      }
+      .push-title {
+        font-size: 15px;
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+      .push-text {
+        font-size: 13px;
+        color: #555;
+        line-height: 1.35;
+      }
+      /* Frame 4: Offline */
+      .offline-bar {
+        background: #333;
+        color: #fff;
+        padding: 10px 12px;
+        font-size: 13px;
+        text-align: center;
+      }
+      .content-below {
+        margin-top: 12px;
+        height: 100px;
+        border: 1px dashed #ddd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        color: #bbb;
+      }
+      /* Frame 5: Splash */
+      .splash {
+        min-height: 280px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+      .splash-logo {
+        width: 72px;
+        height: 72px;
+        border: 2px dashed #bbb;
+        border-radius: 16px;
+      }
+      .splash-title {
+        font-size: 18px;
+        font-weight: 600;
+      }
+      .spinner {
+        width: 28px;
+        height: 28px;
+        border: 3px solid #e0e0e0;
+        border-top-color: #666;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Island activity — lo-fi wireframes (375px)</h1>
+
+    <!-- Frame 1 -->
+    <section class="frame" aria-labelledby="f1">
+      <span class="frame-label" id="f1">Frame 1 — Add to home screen</span>
+      <div class="install-banner">
+        <div class="install-icon" aria-hidden="true"></div>
+        <div>
+          <div class="install-copy">
+            <strong>Add to Home Screen</strong><br />
+            Install for quick access and offline use.
+          </div>
+          <div class="install-actions">
+            <span class="btn">Later</span>
+            <span class="btn btn-primary">Install</span>
+          </div>
+        </div>
+      </div>
+      <p class="muted">Context: user opened an island; banner overlays top of island content.</p>
+      <div class="screen-placeholder">Island content (placeholder)</div>
+    </section>
+
+    <!-- Frame 2 -->
+    <section class="frame" aria-labelledby="f2">
+      <span class="frame-label" id="f2">Frame 2 — Push: streak reminder</span>
+      <div class="push-shell">
+        <div class="push-header"></div>
+        <div class="push-body">
+          <div class="push-app">Ventilator Education</div>
+          <div class="push-title">Keep your streak</div>
+          <div class="push-text">You have not practiced today. Open the app to maintain your streak.</div>
+        </div>
+      </div>
+      <p class="muted">System-style notification card (wireframe).</p>
+    </section>
+
+    <!-- Frame 3 -->
+    <section class="frame" aria-labelledby="f3">
+      <span class="frame-label" id="f3">Frame 3 — Push: island unlock</span>
+      <div class="push-shell">
+        <div class="push-header"></div>
+        <div class="push-body">
+          <div class="push-app">Ventilator Education</div>
+          <div class="push-title">New island unlocked</div>
+          <div class="push-text">Island name is now available. Tap to continue learning.</div>
+        </div>
+      </div>
+      <p class="muted">Unlock alert after progression milestone.</p>
+    </section>
+
+    <!-- Frame 4 -->
+    <section class="frame" aria-labelledby="f4">
+      <span class="frame-label" id="f4">Frame 4 — Offline banner</span>
+      <div class="offline-bar">No connection — some features unavailable</div>
+      <div class="content-below">Island screen (degraded / cached)</div>
+      <p class="muted">Fixed or sticky bar; rest of UI still visible.</p>
+    </section>
+
+    <!-- Frame 5 -->
+    <section class="frame" aria-labelledby="f5">
+      <span class="frame-label" id="f5">Frame 5 — Splash / loading</span>
+      <div class="splash">
+        <div class="splash-logo" aria-hidden="true"></div>
+        <div class="splash-title">App name</div>
+        <div class="spinner" aria-label="Loading"></div>
+        <p class="muted" style="margin: 0">Loading island…</p>
+      </div>
+    </section>
+  </body>
+</html>
